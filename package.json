@@ -1,0 +1,35 @@
+{
+  "name": "inferno-ace",
+  "version": "1.0.0",
+  "description": "Code editor using Ace for Inferno",
+  "main": "dist/index.js",
+  "module": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.4",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-inferno": "^3.3.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "brace": "^0.11.0",
+    "buble": "^0.18.0",
+    "enzyme": "^3.2.0",
+    "inferno-component": "^3.10.1",
+    "jest": "^22.0.4",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "enzyme-adapter-inferno": "^0.1.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "brace": "<rootDir>/mocks/brace.js"
+    }
+  }
+}
