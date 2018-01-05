@@ -1,17 +1,19 @@
 import Component from 'inferno-component';
 import brace from 'brace';
 
-// import 'brace/mode/javascript';
-// import 'brace/theme/github';
+import 'brace/theme/github';
 
 class InfernoAce extends Component {
 
+  proxyEventData(eventData) {
+    return Object.assign({ inputValue: this.editor.getValue() }, eventData);
+  }
+
   componentDidMount() {
     this.editor = brace.edit('inferno-ace-editor');
-    console.log('editor', this.editor);
-    // this.editor.getSession().setMode('ace/mode/javascript');
-    // this.editor.setTheme('ace/theme/github');
-    // this.editor.on('input', this.props.onInput);
+    this.editor.setTheme('ace/theme/github');
+    this.editor.on('input', (eventData) => this.props.onInput(this.proxyEventData(eventData)));
+    this.editor.on('change', (eventData) => this.props.onChange(this.proxyEventData(eventData)));
   }
 
   render() {
@@ -23,7 +25,8 @@ class InfernoAce extends Component {
 }
 
 InfernoAce.defaultProps = {
-  onInput: () => null
-}
+  onInput: () => {},
+  onChange: () => {}
+};
 
 export default InfernoAce;
