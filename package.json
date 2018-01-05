@@ -11,7 +11,11 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "enzyme-adapter-inferno": "^0.1.0",
+    "eslint": "^4.14.0",
+    "eslint-plugin-inferno": "^7.4.0",
+    "eslint-plugin-jest": "^21.5.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.0.4",
     "babel-loader": "^7.1.2",
@@ -24,12 +28,6 @@
     "inferno-component": "^3.10.1",
     "jest": "^22.0.4",
     "webpack": "^3.10.0"
-  },
-  "devDependencies": {
-    "enzyme-adapter-inferno": "^0.1.0",
-    "eslint": "^4.14.0",
-    "eslint-plugin-inferno": "^7.4.0",
-    "eslint-plugin-jest": "^21.5.0"
   },
   "jest": {
     "moduleNameMapper": {
