@@ -13,7 +13,7 @@ jobs:
   include:
   - script: npm run lint
   - script:
-    - npm run test
+    - npm run test:prod
   - stage: Build
     script:
     - npm run build
