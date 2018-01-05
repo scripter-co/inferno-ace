@@ -31,6 +31,22 @@ describe('Inferno Ace', function () {
     expect(brace.edit().setTheme).toBeCalledWith('ace/theme/github');
   });
 
+  describe('Font Size', function () {
+
+    it('initialises with the default font size', () => {
+      const wrapper = mount(<InfernoAce />);
+
+      expect(brace.edit().setFontSize).toBeCalledWith(12);
+    });
+
+    it('initialises with the correct font size', () => {
+      const wrapper = mount(<InfernoAce fontSize={22} />);
+
+      expect(brace.edit().setFontSize).toBeCalledWith(22);
+    });
+
+  });
+
   describe('Events', function () {
 
     function getEvent(eventName) {

@@ -12,6 +12,7 @@ class InfernoAce extends Component {
   componentDidMount() {
     this.editor = brace.edit('inferno-ace-editor');
     this.editor.setTheme('ace/theme/github');
+    this.editor.setFontSize(this.props.fontSize);
     this.editor.on('input', (eventData) => this.props.onInput(this.proxyEventData(eventData)));
     this.editor.on('change', (eventData) => this.props.onChange(this.proxyEventData(eventData)));
   }
@@ -26,7 +27,8 @@ class InfernoAce extends Component {
 
 InfernoAce.defaultProps = {
   onInput: () => {},
-  onChange: () => {}
+  onChange: () => {},
+  fontSize: 12
 };
 
 export default InfernoAce;

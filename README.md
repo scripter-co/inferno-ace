@@ -26,7 +26,7 @@ class ExampleComponent extends Component {
 
   render() {
     return (
-      <InfernoAce onChange={this.onChange} onInput={this.onInput} />
+      <InfernoAce fontSize={16} onChange={this.onChange} onInput={this.onInput} />
     );
   }
 
@@ -34,6 +34,9 @@ class ExampleComponent extends Component {
 ```
 
 ## Parameters
+
+* fontSize
+  - Font size to use when rendering the editor
 
 * onChange
   - Mapped to Ace change event with additional `inputValue` key containing the contents of the code editor.
