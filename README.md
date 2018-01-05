@@ -4,20 +4,39 @@
 
 [Ace Editor](https://ace.c9.io/) for Inferno.
 
-## Installation
+## Installation
 
 `npm i inferno-ace`
 
-## Usage
+## Example
 
 ```javascript
-import InfernoAce from 'inferno'
-<InfernoAce />
+import Component from 'inferno-component';
+import InfernoAce from 'inferno-ace'
+
+class ExampleComponent extends Component {
+
+  onChange(e) {
+    console.log('onChange called', e);
+  }
+
+  onInput(e) {
+    console.log('onInput called', e);
+  }
+
+  render() {
+    return (
+      <InfernoAce onChange={this.onChange} onInput={this.onInput} />
+    );
+  }
+
+}
 ```
 
-Params:
+## Parameters
 
-- onChange
+* onChange
   - Mapped to Ace change event with additional `inputValue` key containing the contents of the code editor.
-- onInput
+
+* onInput
   - Mapped to Ace change event with additional `inputValue` key containing the contents of the code editor.
